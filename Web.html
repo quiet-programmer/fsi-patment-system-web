@@ -1,1 +1,79 @@
 
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+
+    <style>
+      .in {
+        width: 30%;
+        height: 25px;
+      }
+      .btn {
+        margin-top: 8px;
+        background: teal;
+        padding: 5px;
+        font-family: serif;
+        color: #fff;
+        height: 35px;
+        width: auto;
+        border: none;
+        border-radius: 5px;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <h1>Check How many days you have being on Earth</h1>
+      <h6>please always use the button</h6>
+    <form class="" action="index.html" method="post">
+      <input id="name" class="in" type="text" name="name" placeholder="Please input Name here" value=""> <br> <br>
+      <input id="input" class="in" type="text" name="age" placeholder="Please Input age here" value=""> <br>
+      <button onclick="check()" class="btn" type="button" name="button">Check</button>
+    </form>
+
+    <h3 id="print"></h3>
+    </center>
+    <script>
+            // Failing = Learning
+      function check() {
+
+        //get the input here.
+        let name = document.getElementById('name').value;
+        let input = document.getElementById('input').value;
+
+        //check if name field is empty
+
+        //add valid number
+        let valid = /^[0-9]+$/;
+
+        //check if valid numbers are entered
+        if (input.match(valid)) {
+
+          let calc = input * 365; // calculate the age
+          let output = name + " You have lived " + calc + " Days on earth"; // gets the text
+          document.getElementById('print').innerHTML = output;// print out the text
+          console.log('success');
+
+        } else {
+          //give out the error message
+          alert("Please input valid Numbers not Alphabets");
+          document.getElementById('print').innerHTML = "Please do not attach letters to it";
+          console.log("Invalid inputs");
+        }
+
+        // check if words or numbers match
+        function match(word) {
+          if (word === word) {
+            return true;
+          } else {
+            return false;
+          }
+        }
+
+        // end of function
+      }
+    </script>
+  </body>
+</html>
